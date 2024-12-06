@@ -40,14 +40,16 @@ class ShowCounter extends StatelessWidget {
                   Text(
                     soundRecorderState.second.toString().padLeft(2, '0'),
                     style: counterTextStyle ??
-                        const TextStyle(color: Colors.black),
+                        TextStyle(
+                            color: Theme.of(context).colorScheme.onSurface),
                   ),
                   const SizedBox(width: 3),
                   const Text(" : "),
                   Text(
                     soundRecorderState.minute.toString().padLeft(2, '0'),
                     style: counterTextStyle ??
-                        const TextStyle(color: Colors.black),
+                        TextStyle(
+                            color: Theme.of(context).colorScheme.onSurface),
                   ),
                 ],
               ),

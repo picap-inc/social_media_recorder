@@ -39,6 +39,8 @@ class SocialMediaRecorder extends StatefulWidget {
   /// use to change all recording widget color
   final Color? backGroundColor;
 
+  final Color? lockBackgroundColor;
+
   /// use to change the counter style
   final TextStyle? counterTextStyle;
 
@@ -95,6 +97,7 @@ class SocialMediaRecorder extends StatefulWidget {
     this.recordIcon,
     this.lockButton,
     this.counterBackGroundColor,
+    this.lockBackgroundColor,
     this.recordIconWhenLockedRecord,
     this.recordIconBackGroundColor = Colors.blue,
     this.recordIconWhenLockBackGroundColor = Colors.blue,
@@ -268,6 +271,7 @@ class _SocialMediaRecorder extends State<SocialMediaRecorder> {
               child: LockRecord(
                 soundRecorderState: state,
                 lockIcon: widget.lockButton,
+                backgroundColor: widget.lockBackgroundColor,
               ),
             )
           ],
