@@ -10,11 +10,13 @@ class LockRecord extends StatefulWidget {
   // ignore: sort_constructors_first
 
   final Widget? lockIcon;
+  final Color? backgroundColor;
   const LockRecord({
     this.lockIcon,
+    this.backgroundColor,
     required this.soundRecorderState,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   @override
   _LockRecordState createState() => _LockRecordState();
 }
@@ -40,7 +42,7 @@ class _LockRecordState extends State<LockRecord> with TickerProviderStateMixin {
               height: 50 - widget.soundRecorderState.heightPosition < 0
                   ? 0
                   : 50 - widget.soundRecorderState.heightPosition,
-              color: Colors.grey.shade100,
+              color: widget.backgroundColor ?? Colors.grey.shade100,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: widget.lockIcon ??

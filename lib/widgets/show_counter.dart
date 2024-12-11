@@ -23,9 +23,12 @@ class ShowCounter extends StatelessWidget {
     return Align(
       alignment: Alignment.centerLeft,
       child: Container(
-        height: fullRecordPackageHeight,
+        height: fullRecordPackageHeight - 10,
         width: MediaQuery.of(context).size.width * 0.4,
-        color: counterBackGroundColor ?? Colors.grey.shade100,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(35),
+          color: counterBackGroundColor ?? Colors.grey.shade100,
+        ),
         child: Padding(
           padding: const EdgeInsets.only(top: 6),
           child: Row(
@@ -40,14 +43,16 @@ class ShowCounter extends StatelessWidget {
                   Text(
                     soundRecorderState.second.toString().padLeft(2, '0'),
                     style: counterTextStyle ??
-                        const TextStyle(color: Colors.black),
+                        TextStyle(
+                            color: Theme.of(context).colorScheme.onSurface),
                   ),
                   const SizedBox(width: 3),
                   const Text(" : "),
                   Text(
                     soundRecorderState.minute.toString().padLeft(2, '0'),
                     style: counterTextStyle ??
-                        const TextStyle(color: Colors.black),
+                        TextStyle(
+                            color: Theme.of(context).colorScheme.onSurface),
                   ),
                 ],
               ),
